@@ -32,6 +32,26 @@ end
 use Rack::ShowStatus      # Nice looking 404s and other messages
 use Rack::ShowExceptions  # Nice looking errors
 
+use Rack::Static,
+  :urls => ["/stylesheets", "/images", "/javascripts"],
+  :root => "public"
+
+#SOLUTION:
+use Rack::Auth::Basic, "Restricted Area" do |username, password|
+  [username, password] == ['admin', 'thought01']
+end
+
+run lambda { |env|
+  [
+    200,
+    {
+      'Content-Type'  => 'text/html',
+      'Cache-Control' => 'public, max-age=86400'
+    },
+    File.open('public/index.html', File::RDONLY)
+  ]
+}
+
 # Rack Application
 if ENV['SERVER_SOFTWARE'] =~ /passenger/i
   # Passenger only needs the adapter
