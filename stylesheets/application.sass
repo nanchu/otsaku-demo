@@ -1,0 +1,116 @@
+@import "compass"
+@import "partials/reset"
+
+//global
+
+body
+	font-family: Arial
+	font-size: 14px
+	position: relative
+
+.content
+	padding: 10px
+
+h1
+	font-size: 1.2em
+h2
+	font-size: 1.2em
+	margin: .5em 0
+
+input
+	padding: 6px
+	width: 100%
+	+border-radius(4px)
+	border: 1px solid #ccc
+
+input[type="submit"], input[type="button"]
+	font-size: 16px
+	padding: 10px
+	background-color: #fff
+	+background-image(linear-gradient(#fff, #eee))
+
+//index
+
+#type-selector
+	text-align: center
+	margin-top: 80px
+	input
+		margin: 10px 0
+
+//nav
+nav
+	min-width: 320px
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	border-bottom: 1px solid #ccc
+	margin-bottom: 10px
+	padding: 10px
+	background-color: #fff
+	+box-shadow(0 0 1px 1px rgba(0,0,0, .1))
+	.menu
+		white-space: nowrap
+		overflow-x: scroll
+
+.index
+	nav
+		display: none
+
+
+.patients
+	border: 1px solid #ccc
+	font-size: 1.2em
+	color: #ccc
+	display: inline-block
+	vertical-align: top
+	text-align: center
+	line-height: 40px
+	width: 50px
+	height: 40px
+	margin: 0 4px
+	&.selected
+		border: 1px solid #333
+		color: #333
+		background-image: url("/images/user.png")
+		background-size: 80%
+		background-repeat: no-repeat
+		background-position: center center
+	&#addNew
+		border: 1px solid #333
+		color: #333
+		font-size: 1.8em
+
+.results
+	#addNew
+		display: none
+.home
+	position: absolute
+	top: 10px
+	right: 10px
+	text-decoration: underline
+
+
+//form
+.wrapper
+	margin-top: 60px
+table
+	width: 100%
+	margin-bottom: 10px
+td
+	text-align: left
+	padding: 8px 0
+	&:first-of-type
+		width: 140px
+	&:last-of-type
+		text-align: right
+
+.distribution-graph
+	margin: 0 auto
+	background-image: url("/images/graph.gif")
+	background-position: center center
+	background-size: 100%
+	background-repeat: no-repeat
+	width: 100%
+	max-width: 400px
+	height: 200px

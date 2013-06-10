@@ -1,0 +1,14 @@
+- content_for :bodyClass do
+	results
+
+.wrapper
+	%h2 Patient 1 Data
+
+#type-selector
+	%h2 Treatment Success
+	%h2 63.45%
+
+	.distribution-graph
+
+	%input{:type=>"button", :value=>"New Calculation", :onclick=>"window.location='/patient-info';"}
+	%input#back{:type=>"button", :value=>"Back"}

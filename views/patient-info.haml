@@ -1,0 +1,15 @@
+- content_for :bodyClass do
+	patient-info
+
+.wrapper
+	%h2 Patient 1 Data
+	%form
+		- @label = ["Serum Sodium", "Serum", "Urine Sodium", "Urine Potassium", "Urine Chloride", "Blood Urea", "Nitrogen", "Serum Potassium"]
+		%table
+			- @label.each do |label|
+				%tr
+					%td
+						%label= label
+					%td
+						%input{:type=>"text"}
+		%input#calculate{:type=>"button", :value=>"Calculate"}

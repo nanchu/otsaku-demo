@@ -1,0 +1,9 @@
+- content_for :bodyClass do
+	index
+
+%h1 Otsuka Demo App
+
+#type-selector
+	%h2 Calculate treatment success for
+	%input{:type=>"button", :value=>"Hypoantremia", :onclick=>"window.location='/patient-info';"}
+	%input{:type=>"button", :value=>"Secondary to SIADH", :onclick=>"window.location='/patient-info';"}
